@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FitMotion AI — Athlete Performance, Mobility & Exercise AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js" defer></script>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <!-- Left Precision Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="brand-box">
+        <div class="brand-title">⚡ FITMOTION AI</div>
+        <div class="brand-sub">Performance · Mobility · AI</div>
+      </div>
+
+      <div id="user-badge" class="user-badge">Loading athlete...</div>
+
+      <nav class="nav-list">
+        <div class="nav-group">Command Center</div>
+        <button class="nav-btn active" data-view="dashboard">⚡ Main Dashboard</button>
+
+        <div class="nav-group">Exercises &amp; AI</div>
+        <button class="nav-btn" data-view="library">🏃 Exercise Library (90)</button>
+        <button class="nav-btn" data-view="recommendations">🎯 AI Recommendations</button>
+        <button class="nav-btn" data-view="generator">🔥 Workout Generator</button>
+        <button class="nav-btn" data-view="plans">🗂️ 4-Week Sport Plans</button>
+        <button class="nav-btn" data-view="sports">🏆 Sport-Specific Hub</button>
+
+        <div class="nav-group">Coaching &amp; Analytics</div>
+        <button class="nav-btn" data-view="assistant">🤖 AI Training Coach</button>
+        <button class="nav-btn" data-view="planner">📅 Weekly Planner &amp; Log</button>
+        <button class="nav-btn" data-view="analytics">📊 Progress Analytics</button>
+
+        <div class="nav-group">Athlete Account</div>
+        <button class="nav-btn" data-view="profile">👤 Profile &amp; Sign In</button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="https://github.com/Santoshgadale005/FitMotion-AI" target="_blank" rel="noopener">GitHub Repo ↗</a>
+        <span>v1.0.0 · Vercel Demo</span>
+      </div>
+    </aside>
+
+    <!-- Mobile Topbar -->
+    <header class="mobile-topbar">
+      <button id="menu-toggle" class="icon-btn" aria-label="Toggle menu">☰</button>
+      <div class="mobile-brand">⚡ FITMOTION AI</div>
+      <button class="pill-btn" data-jump="profile">👤 Profile</button>
+    </header>
+
+    <!-- Main Dynamic Canvas -->
+    <main class="main-content">
+      <div id="toast" class="toast hidden"></div>
+      <div id="app-view">
+        <div class="loading-state">Booting FitMotion AI Engine...</div>
+      </div>
+      <footer class="safety-box" id="safety-footer">
+        <strong>Wellness &amp; Safety Notice:</strong> FitMotion AI provides general fitness, exercise organization, and athletic conditioning guidance. It is not a medical service and does not diagnose injuries or medical conditions. Consult a qualified healthcare professional if you experience pain, dizziness, or an existing injury.
+      </footer>
+    </main>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

@@ -1,8 +1,8 @@
-"""Scikit-learn machine learning exercise ranker for FitMotion AI.
+"""Machine learning exercise ranker for FitMotion AI.
 
-Uses a scikit-learn Pipeline (StandardScaler + Ridge regression) combined with
-cosine similarity over engineered exercise feature vectors to personalize
-rankings from each user's exercise ratings and workout completion history.
+Uses Scikit-learn (`StandardScaler` + `Ridge` + `cosine_similarity`) when
+installed locally, and falls back to an exact closed-form NumPy Ridge +
+cosine-similarity implementation in lightweight serverless runtimes (Vercel).
 """
 
 from __future__ import annotations
@@ -10,12 +10,18 @@ from __future__ import annotations
 from typing import Any
 
 import numpy as np
-from sklearn.linear_model import Ridge
-from sklearn.metrics.pairwise import cosine_similarity
-from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import StandardScaler
 
 import config
+
+try:
+    from sklearn.linear_model import Ridge
+    from sklearn.metrics.pairwise import cosine_similarity as _sk_cosine
+    from sklearn.pipeline import Pipeline
+    from sklearn.preprocessing import StandardScaler
+
+    _HAS_SKLEARN = True
+except ImportError:
+    _HAS_SKLEARN = False
 
 DIFFICULTY_NUMERIC: dict[str, float] = {
     "Beginner": 1.0,
@@ -24,15 +30,42 @@ DIFFICULTY_NUMERIC: dict[str, float] = {
 }
 
 
+def _numpy_ridge_predict(X_train: np.ndarray, y_train: np.ndarray, X_all: np.ndarray, alpha: float = 2.0) -> np.ndarray:
+    """Exact closed-form standardized Ridge regression using NumPy only."""
+    mean = X_train.mean(axis=0)
+    std = X_train.std(axis=0)
+    std = np.where(std < 1e-8, 1.0, std)
+
+    Xs = (X_train - mean) / std
+    X_all_s = (X_all - mean) / std
+
+    y_mean = float(y_train.mean())
+    yc = y_train - y_mean
+
+    n_features = Xs.shape[1]
+    weights = np.linalg.solve(Xs.T @ Xs + alpha * np.eye(n_features), Xs.T @ yc)
+    return X_all_s @ weights + y_mean
+
+
+def _numpy_cosine_sim(matrix: np.ndarray, centroid: np.ndarray) -> np.ndarray:
+    """Compute cosine similarity between every row in `matrix` and `centroid`."""
+    mat_norm = np.linalg.norm(matrix, axis=1, keepdims=True)
+    cen_norm = np.linalg.norm(centroid, axis=1, keepdims=True)
+    mat_norm = np.where(mat_norm < 1e-8, 1.0, mat_norm)
+    cen_norm = np.where(cen_norm < 1e-8, 1.0, cen_norm)
+    return ((matrix / mat_norm) @ (centroid / cen_norm).T).ravel()
+
+
 class MLExerciseRanker:
-    """Personalized Scikit-learn ranker that learns from ratings and workout history."""
+    """Personalized ML ranker that learns from exercise ratings and workout history."""
 
     def __init__(self) -> None:
         self._categories = list(config.EXERCISE_CATEGORIES)
         self._sports = list(config.SUPPORTED_SPORTS)
-        self._model: Pipeline | None = None
+        self._model: Any = None
         self.is_trained: bool = False
         self.training_samples: int = 0
+        self.backend_name: str = "Scikit-learn Ridge" if _HAS_SKLEARN else "NumPy Ridge ML"
 
     def _featurize(self, exercise: dict[str, Any]) -> np.ndarray:
         """Encode an exercise dictionary into a fixed-length numeric feature vector."""
@@ -55,11 +88,7 @@ class MLExerciseRanker:
         feedback_map: dict[str, dict[str, Any]] | None = None,
         exercise_completion_counts: dict[str, int] | None = None,
     ) -> dict[str, dict[str, Any]]:
-        """Fit a per-user preference model and return ML boost scores + reasons.
-
-        Gracefully returns neutral scores (0.0) when there is insufficient
-        user interaction history (cold-start safe).
-        """
+        """Fit a per-user preference model and return ML boost scores + reasons."""
         if not exercises:
             return {}
 
@@ -79,14 +108,12 @@ class MLExerciseRanker:
             completions = history.get(ex_id, 0)
 
             if rating is not None:
-                # Map 1..5 rating onto -1.0..+1.0 preference target
                 target = (float(rating) - 3.0) / 2.0
                 train_X.append(feature_matrix[idx])
                 train_y.append(target)
                 if rating >= 4:
                     positive_indices.append(idx)
             elif completions > 0:
-                # Implicit positive signal from repeated completion (capped gently)
                 implicit_target = min(0.65, 0.25 + 0.12 * completions)
                 train_X.append(feature_matrix[idx])
                 train_y.append(implicit_target)
@@ -101,31 +128,35 @@ class MLExerciseRanker:
                 scores[ex["id"]] = {"ml_score": 0.0, "ml_reason": ""}
             return scores
 
-        # 1. Fit regularized Ridge regression on explicit & implicit preferences
         X_arr = np.vstack(train_X)
         y_arr = np.array(train_y, dtype=np.float64)
 
-        pipeline = Pipeline(
-            [
-                ("scaler", StandardScaler()),
-                ("regressor", Ridge(alpha=2.0)),
-            ]
-        )
-        pipeline.fit(X_arr, y_arr)
-        self._model = pipeline
+        if _HAS_SKLEARN:
+            pipeline = Pipeline(
+                [
+                    ("scaler", StandardScaler()),
+                    ("regressor", Ridge(alpha=2.0)),
+                ]
+            )
+            pipeline.fit(X_arr, y_arr)
+            self._model = pipeline
+            reg_preds = np.clip(pipeline.predict(feature_matrix), -1.0, 1.0)
+        else:
+            reg_preds = np.clip(_numpy_ridge_predict(X_arr, y_arr, feature_matrix, alpha=2.0), -1.0, 1.0)
+
         self.is_trained = True
 
-        reg_preds = np.clip(pipeline.predict(feature_matrix), -1.0, 1.0)
-
-        # 2. Content-based cosine similarity to user's positively rated/completed moves
         sim_scores = np.zeros(len(exercises), dtype=np.float64)
         if positive_indices:
             pos_centroid = np.mean(feature_matrix[positive_indices], axis=0, keepdims=True)
-            sim_scores = cosine_similarity(feature_matrix, pos_centroid).ravel()
+            sim_scores = (
+                _sk_cosine(feature_matrix, pos_centroid).ravel()
+                if _HAS_SKLEARN
+                else _numpy_cosine_sim(feature_matrix, pos_centroid)
+            )
 
         for idx, ex in enumerate(exercises):
             ex_id = ex["id"]
-            # Blend predicted preference and content similarity into a -12..+18 score adjustment
             blended = float(reg_preds[idx]) * 12.0 + float(sim_scores[idx]) * 6.0
             fb_rating = feedback.get(ex_id, {}).get("rating")
             completions = history.get(ex_id, 0)
@@ -136,7 +167,7 @@ class MLExerciseRanker:
             elif fb_rating is not None and fb_rating <= 2:
                 reason = f"Deprioritized by ML ranker based on your {fb_rating}/5 rating."
             elif blended >= 6.0:
-                reason = "Boosted by Scikit-learn ranker because its profile closely matches exercises you favor and complete."
+                reason = "Boosted by ML ranker because its profile closely matches exercises you favor and complete."
             elif completions > 0:
                 reason = f"Informed by your workout history ({completions} prior completion{'s' if completions > 1 else ''})."
 

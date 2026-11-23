@@ -156,8 +156,9 @@ def sync_exercises_to_db(
         if (force_export_json or not EXERCISES_JSON_PATH.exists())
         else load_exercises_from_json()
     )
-    for entry in catalog:
-        ensure_exercise_visual(entry, overwrite=force_export_json)
+    if not config.IS_SERVERLESS:
+        for entry in catalog:
+            ensure_exercise_visual(entry, overwrite=force_export_json)
 
     factory = session_factory or SessionLocal
     with get_db_session(factory) as session:

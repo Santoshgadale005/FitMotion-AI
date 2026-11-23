@@ -1,0 +1,13 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "version": 2,
+  "functions": {
+    "api/index.py": {
+      "includeFiles": "{data/*.json,assets/images/*.svg}"
+    }
+  },
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/index.py" },
+    { "source": "/assets/images/(.*)", "destination": "/api/index.py" }
+  ]
+}

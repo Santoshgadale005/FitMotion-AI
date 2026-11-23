@@ -20,10 +20,15 @@ APP_TAGLINE: str = "AI-Powered Exercise Recommendation & Athlete Wellness Platfo
 APP_VERSION: str = "1.0.0"
 APP_ENV: str = os.getenv("APP_ENV", "development")
 
-# Ensure local data directory exists for SQLite storage
-DATA_DIR.mkdir(parents=True, exist_ok=True)
+# Detect read-only serverless environment (e.g., Vercel)
+IS_SERVERLESS: bool = bool(os.getenv("VERCEL") or os.getenv("AWS_LAMBDA_FUNCTION_NAME"))
 
-DEFAULT_DB_PATH: Path = DATA_DIR / "fitmotion.db"
+if IS_SERVERLESS:
+    DEFAULT_DB_PATH: Path = Path("/tmp/fitmotion.db")
+else:
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
+    DEFAULT_DB_PATH = DATA_DIR / "fitmotion.db"
+
 DATABASE_URL: str = os.getenv(
     "DATABASE_URL",
     f"sqlite:///{DEFAULT_DB_PATH.as_posix()}",
