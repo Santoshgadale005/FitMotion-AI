@@ -2,7 +2,12 @@
 
 **AI-Powered Exercise Recommendation & Athlete Wellness Platform**
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-fit--motion--ai.vercel.app-FC4C02?style=for-the-badge&logo=vercel&logoColor=white)](https://fit-motion-ai.vercel.app)
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FSantoshgadale005%2FFitMotion-AI)
+
+### 🌐 Live Demo: [https://fit-motion-ai.vercel.app](https://fit-motion-ai.vercel.app)
+
+> Explore the live interactive demo immediately (preloaded with a Demo Athlete profile, hybrid ML recommendations, 90 animated exercise motion demos, 9 complete 4-week sport plans, AI training coach, and Plotly progress charts).
 
 FitMotion AI is a standalone, modular Python sports-technology platform featuring **90 animated biomechanical exercise demos**, a **hybrid rule-based + Ridge ML recommendation engine**, **9 evidence-based 4-week sport plans** (NSCA, ACSM, FIFA 11+, BWF, USTA, USA Swimming), a **grounded AI training assistant**, a **load-balanced weekly training planner**, and **interactive Plotly progress analytics**.
 
@@ -18,7 +23,7 @@ It ships with **two full frontends sharing the exact same Python AI/database cor
 
 1. Go to **https://vercel.com/new** and import **`Santoshgadale005/FitMotion-AI`**.
 2. Leave the default settings as-is (`vercel.json` + lightweight `requirements.txt` are already preconfigured).
-3. Click **Deploy** — your live portfolio demo will be online at `https://fitmotion-ai.vercel.app` (or your chosen Vercel subdomain) with the Portfolio Demo Athlete preloaded!
+3. Click **Deploy** — your live portfolio demo is hosted at **[https://fit-motion-ai.vercel.app](https://fit-motion-ai.vercel.app)** with the Portfolio Demo Athlete preloaded!
 4. *(Optional)* Add a free PostgreSQL `DATABASE_URL` (Neon or Supabase) in **Vercel → Project Settings → Environment Variables** for permanent cloud user persistence across cold starts.
 
 ---
