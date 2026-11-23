@@ -1,0 +1,114 @@
+{
+  "Badminton": {
+    "summary": "High-speed racquet sport demanding rapid split-step agility, lateral lunging, overhead shoulder mobility, and core stability.",
+    "physical_demands": [
+      "Agility & quick split-step reaction",
+      "Lateral movement & deceleration",
+      "Lower-body conditioning & lunge resilience",
+      "Shoulder & wrist mobility",
+      "Core stability"
+    ],
+    "priority_categories": ["Warm-up", "Sport-Specific Conditioning", "Mobility", "Balance and Stability", "Stretching and Flexibility"],
+    "priority_muscles": ["Quadriceps", "Glutes", "Adductors", "Calves", "Rotator Cuff", "Core"],
+    "warmup_focus": "Dynamic lower-body activation, lateral shuffles, shoulder circles, and wrist preparation.",
+    "recovery_focus": "Adductor, hamstring, calf, and cross-body shoulder stretching paired with gentle breathing."
+  },
+  "Football": {
+    "summary": "Intermittent field sport emphasizing repeat sprint acceleration, sharp cutting mechanics, hip mobility, and unilateral leg balance.",
+    "physical_demands": [
+      "Sprint conditioning & repeat efforts",
+      "First-step acceleration",
+      "Lower-body strength & hamstring resilience",
+      "Hip mobility & groin flexibility",
+      "Single-leg balance"
+    ],
+    "priority_categories": ["Warm-up", "Sport-Specific Conditioning", "Strength Training", "Mobility", "Balance and Stability"],
+    "priority_muscles": ["Hamstrings", "Glutes", "Quadriceps", "Hip Flexors", "Adductors", "Core"],
+    "warmup_focus": "Progressive jogging, leg swings, dynamic lunges, hip mobility, and controlled change-of-direction drills.",
+    "recovery_focus": "Hamstring, hip flexor, groin, and calf stretching with light recovery walking."
+  },
+  "Basketball": {
+    "summary": "Explosive court sport requiring vertical jump conditioning, quiet landing mechanics, ankle dorsiflexion, and defensive slide stamina.",
+    "physical_demands": [
+      "Jump conditioning & vertical power",
+      "Soft, knee-aligned landing mechanics",
+      "Ankle mobility & stability",
+      "Lower-body strength",
+      "Core & lateral stability"
+    ],
+    "priority_categories": ["Warm-up", "Sport-Specific Conditioning", "Strength Training", "Mobility", "Balance and Stability"],
+    "priority_muscles": ["Quadriceps", "Glutes", "Calves", "Ankle Stabilizers", "Core"],
+    "warmup_focus": "Ankle dorsiflexion drills, dynamic lunges, high knees, and defensive lateral shuffles.",
+    "recovery_focus": "Quadriceps, calf, hip flexor stretching, and gentle cooldown walking."
+  },
+  "Cricket": {
+    "summary": "Multi-hour skill and conditioning sport requiring rotational core strength, throwing/bowling shoulder mobility, and general endurance.",
+    "physical_demands": [
+      "Shoulder & scapular mobility",
+      "Rotational core strength",
+      "Thoracic spine mobility",
+      "General aerobic endurance",
+      "Lower-body deceleration strength"
+    ],
+    "priority_categories": ["Warm-up", "Mobility", "Sport-Specific Conditioning", "Strength Training", "Cardiovascular Training"],
+    "priority_muscles": ["Rotator Cuff", "Obliques", "Thoracic Spine", "Glutes", "Core"],
+    "warmup_focus": "Arm circles, thoracic rotations, scapular wall slides, dynamic lunges, and light jogging.",
+    "recovery_focus": "Posterior shoulder stretch, chest doorway stretch, hip flexor release, and diaphragmatic breathing."
+  },
+  "Tennis": {
+    "summary": "Explosive rotational court sport combining repeated lateral bursts, shoulder endurance, wrist resilience, and split-step timing.",
+    "physical_demands": [
+      "Lateral agility & court recovery",
+      "Rotational trunk power",
+      "Rotator cuff & shoulder stability",
+      "Wrist & forearm mobility",
+      "Lower-body endurance"
+    ],
+    "priority_categories": ["Warm-up", "Sport-Specific Conditioning", "Mobility", "Balance and Stability", "Stretching and Flexibility"],
+    "priority_muscles": ["Rotator Cuff", "Obliques", "Adductors", "Quadriceps", "Calves", "Forearms"],
+    "warmup_focus": "Side shuffles, wrist drills, banded external rotations, leg swings, and light jump-rope rhythm.",
+    "recovery_focus": "Shoulder, triceps, groin, and calf stretching plus paced recovery breathing."
+  },
+  "Swimming": {
+    "summary": "Full-body aquatic sport requiring smooth overhead shoulder range, thoracic extension/rotation, and streamlined core control.",
+    "physical_demands": [
+      "Shoulder mobility & scapular control",
+      "Thoracic spine mobility",
+      "Anti-extension core conditioning",
+      "Posterior upper-back endurance",
+      "General strength balance"
+    ],
+    "priority_categories": ["Warm-up", "Mobility", "Sport-Specific Conditioning", "Strength Training", "Balance and Stability"],
+    "priority_muscles": ["Rotator Cuff", "Thoracic Spine", "Latissimus Dorsi", "Core", "Upper Back"],
+    "warmup_focus": "Arm circles, controlled shoulder rotations, thoracic open-book drills, and prone Y-T-W activation.",
+    "recovery_focus": "Chest doorway stretch, triceps stretch, gentle cat-cow mobility, and diaphragmatic breathing."
+  },
+  "Running": {
+    "summary": "Cyclic endurance sport demanding elastic calf strength, hip mobility, single-leg stability, and consistent aerobic conditioning.",
+    "physical_demands": [
+      "Running-specific dynamic warm-ups",
+      "Calf & Achilles conditioning",
+      "Hip flexor & ankle mobility",
+      "Single-leg lower-body strength",
+      "Aerobic cardiovascular endurance"
+    ],
+    "priority_categories": ["Warm-up", "Mobility", "Strength Training", "Balance and Stability", "Cardiovascular Training"],
+    "priority_muscles": ["Calves", "Glutes", "Hamstrings", "Hip Flexors", "Core", "Ankle Stabilizers"],
+    "warmup_focus": "Light jogging, leg swings, high knees, butt kicks, ankle dorsiflexion, and running A-skips.",
+    "recovery_focus": "Light walking cooldown followed by calf, hamstring, quad, and hip flexor stretching."
+  },
+  "General Fitness": {
+    "summary": "Balanced lifelong wellness approach blending foundational strength, joint mobility, cardiovascular health, stability, and restorative recovery.",
+    "physical_demands": [
+      "Full-body foundational strength",
+      "Joint mobility & posture health",
+      "Accessible cardiovascular conditioning",
+      "Core & balance stability",
+      "Sustainable recovery habits"
+    ],
+    "priority_categories": ["Warm-up", "Strength Training", "Mobility", "Cardiovascular Training", "Stretching and Flexibility", "Recovery and Cooldown"],
+    "priority_muscles": ["Quadriceps", "Glutes", "Core", "Upper Back", "Chest", "Cardiovascular System"],
+    "warmup_focus": "Light jogging or marching, arm circles, leg swings, and dynamic lunges.",
+    "recovery_focus": "Gentle stretching, cat-cow spinal mobility, and calming diaphragmatic breathing."
+  }
+}

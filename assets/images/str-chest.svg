@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 162" width="480" height="162" role="img" aria-label="Chest Stretch (Open Doorway)">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#121318"/>
+      <stop offset="100%" stop-color="#09090B"/>
+    </linearGradient>
+    <radialGradient id="studioGlow" cx="22%" cy="54%" r="44%">
+      <stop offset="0%" stop-color="#00E676" stop-opacity="0.24"/>
+      <stop offset="100%" stop-color="#00E676" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="topBar" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00E676"/>
+      <stop offset="100%" stop-color="#00E676" stop-opacity="0.1"/>
+    </linearGradient>
+  </defs>
+  <rect x="1" y="1" width="478" height="160" rx="16" fill="url(#bg)" stroke="#242632" stroke-width="1.5"/>
+  <rect x="1" y="1" width="478" height="160" rx="16" fill="url(#studioGlow)"/>
+  <rect x="16" y="1" width="182" height="2.5" rx="1" fill="url(#topBar)"/>
+  <!-- GOWOD-style dark motion studio stage -->
+  <rect x="14" y="14" width="186" height="134" rx="12" fill="#08090C" stroke="#22242F" stroke-width="1.2"/>
+  <line x1="22" y1="126" x2="192" y2="126" stroke="#27272A" stroke-width="1.5"/>
+  <line x1="44" y1="133" x2="170" y2="133" stroke="#18181B" stroke-width="1"/>
+  <line x1="26" y1="126" x2="188" y2="126" stroke="#334155" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="107.0" y1="52.0" x2="86.0" y2="56.0" stroke="#64748B" stroke-width="4.5" stroke-linecap="round"><animate attributeName="x1" values="107.0;107.0;107.0" dur="2.80s" repeatCount="indefinite" calcMode="linear"/><animate attributeName="y1" values="52.0;52.0;52.0" dur="2.80s" repeatCount="indefinite" calcMode="linear"/><animate attributeName="x2" values="86.0;76.0;86.0" dur="2.80s" repeatCount="indefinite" calcMode="linear"/><animate attributeName="y2" values="56.0;52.0;56.0" dur="2.80s" repeatCount="indefinite" calcMode="linear"/></line>
+  <line x1="86.0" y1="56.0" x2="76.0" y2="46.0" stroke="#64748B" stroke-width="4.0" stroke-linecap="round"><animate attributeName="x1" values="86.0;76.0;86.0" dur="2.80s" repeatCount="indefinite" calcMode="linear"/><animate attributeName="y1" values="56.0;52.0;56.0" dur="2.80s" repeatCount="indefinite" calcMode="linear"/><animate attributeName="x2" values="76.0;62.0;76.0" dur="2.80s" repeatCount="indefinite" calcMode="linear"/><animate attributeName="y2" values="46.0;40.0;46.0" dur="2.80s" repeatCount="indefinite" calcMode="linear"/></line>
+  <line x1="107.0" y1="84.0" x2="102.0" y2="105.0" stroke="#64748B" stroke-width="5.2" stroke-linecap="round"><animate attributeName="x1" values="107.0;107.0;107.0" dur="2.80s" repeatCount="indefinite" calcMode="linear"/><animate attributeName="y1" values="84.0;84.0;84.0" dur="2.80s" repeatCount="indefinite" calcMode="linear"/><animate attributeName="x2" values="102.0;102.0;102.0" dur="2.80s" repeatCount="indefinite" calcMode="linear"/><animate attributeName="y2" values="105.0;105.0;105.0" dur="2.80s" repeatCount="indefinite" calcMode="linear"/></line>
+  <line x1="102.0" y1="105.0" x2="100.0" y2="124.0" stroke="#64748B" stroke-width="4.8" stroke-linecap="round"><animate attributeName="x1" values="102.0;102.0;102.0" dur="2.80s" repeatCount="indefinite" calcMode="linear"/><animate attributeName="y1" values="105.0;105.0;105.0" dur="2.80s" repeatCount="indefinite" calcMode="linear"/><animate attributeName="x2" values="100.0;100.0;100.0" dur="2.80s" repeatCount="indefinite" calcMode="linear"/><animate attributeName="y2" values="124.0;124.0;124.0" dur="2.80s" repeatCount="indefinite" calcMode="linear"/></line>
+  <line x1="107.0" y1="52.0" x2="107.0" y2="84.0" stroke="#F8FAFC" stroke-width="6.2" stroke-linecap="round"><animate attributeName="x1" values="107.0;107.0;107.0" dur="2.80s" repeatCount="indefinite" calcMode="linear"/><animate attributeName="y1" values="52.0;52.0;52.0" dur="2.80s" repeatCount="indefinite" calcMode="linear"/><animate attributeName="x2" values="107.0;107.0;107.0" dur="2.80s" repeatCount="indefinite" calcMode="linear"/><animate attributeName="y2" values="84.0;84.0;84.0" dur="2.80s" repeatCount="indefinite" calcMode="linear"/></line>
+  <line x1="107.0" y1="84.0" x2="112.0" y2="105.0" stroke="#CBD5E1" stroke-width="5.4" stroke-linecap="round"><animate attributeName="x1" values="107.0;107.0;107.0" dur="2.80s" repeatCount="indefinite" calcMode="linear"/><animate attributeName="y1" values="84.0;84.0;84.0" dur="2.80s" repeatCount="indefinite" calcMode="linear"/><animate attributeName="x2" values="112.0;112.0;112.0" dur="2.80s" repeatCount="indefinite" calcMode="linear"/><animate attributeName="y2" values="105.0;105.0;105.0" dur="2.80s" repeatCount="indefinite" calcMode="linear"/></line>
+  <line x1="112.0" y1="105.0" x2="114.0" y2="124.0" stroke="#CBD5E1" stroke-width="5.0" stroke-linecap="round"><animate attributeName="x1" values="112.0;112.0;112.0" dur="2.80s" repeatCount="indefinite" calcMode="linear"/><animate attributeName="y1" values="105.0;105.0;105.0" dur="2.80s" repeatCount="indefinite" calcMode="linear"/><animate attributeName="x2" values="114.0;114.0;114.0" dur="2.80s" repeatCount="indefinite" calcMode="linear"/><animate attributeName="y2" values="124.0;124.0;124.0" dur="2.80s" repeatCount="indefinite" calcMode="linear"/></line>
+  <line x1="107.0" y1="52.0" x2="128.0" y2="56.0" stroke="#00E676" stroke-width="4.6" stroke-linecap="round"><animate attributeName="x1" values="107.0;107.0;107.0" dur="2.80s" repeatCount="indefinite" calcMode="linear"/><animate attributeName="y1" values="52.0;52.0;52.0" dur="2.80s" repeatCount="indefinite" calcMode="linear"/><animate attributeName="x2" values="128.0;138.0;128.0" dur="2.80s" repeatCount="indefinite" calcMode="linear"/><animate attributeName="y2" values="56.0;52.0;56.0" dur="2.80s" repeatCount="indefinite" calcMode="linear"/></line>
+  <line x1="128.0" y1="56.0" x2="138.0" y2="46.0" stroke="#00E676" stroke-width="4.2" stroke-linecap="round"><animate attributeName="x1" values="128.0;138.0;128.0" dur="2.80s" repeatCount="indefinite" calcMode="linear"/><animate attributeName="y1" values="56.0;52.0;56.0" dur="2.80s" repeatCount="indefinite" calcMode="linear"/><animate attributeName="x2" values="138.0;152.0;138.0" dur="2.80s" repeatCount="indefinite" calcMode="linear"/><animate attributeName="y2" values="46.0;40.0;46.0" dur="2.80s" repeatCount="indefinite" calcMode="linear"/></line>
+  <circle cx="107.0" cy="40.0" r="8.5" fill="#00E676" opacity="1.0"><animate attributeName="cx" values="107.0;107.0;107.0" dur="2.80s" repeatCount="indefinite" calcMode="linear"/><animate attributeName="cy" values="40.0;40.0;40.0" dur="2.80s" repeatCount="indefinite" calcMode="linear"/></circle>
+  <circle cx="107.0" cy="84.0" r="3.0" fill="#F8FAFC" opacity="0.9"><animate attributeName="cx" values="107.0;107.0;107.0" dur="2.80s" repeatCount="indefinite" calcMode="linear"/><animate attributeName="cy" values="84.0;84.0;84.0" dur="2.80s" repeatCount="indefinite" calcMode="linear"/></circle>
+  <circle cx="112.0" cy="105.0" r="2.5" fill="#F8FAFC" opacity="0.8"><animate attributeName="cx" values="112.0;112.0;112.0" dur="2.80s" repeatCount="indefinite" calcMode="linear"/><animate attributeName="cy" values="105.0;105.0;105.0" dur="2.80s" repeatCount="indefinite" calcMode="linear"/></circle>
+  <!-- Live tempo pulse indicator -->
+  <circle cx="28" cy="26" r="3.2" fill="#00E676">
+    <animate attributeName="opacity" values="1;0.2;1" dur="1.3s" repeatCount="indefinite"/>
+  </circle>
+  <text x="36" y="29" font-family="Inter, Arial, sans-serif" font-size="8" font-weight="700" fill="#A1A1AA" letter-spacing="1.1">MOTION DEMO</text>
+  <!-- Right telemetry panel -->
+  <rect x="216" y="16" width="248" height="22" rx="6" fill="#00E676" fill-opacity="0.13" stroke="#00E676" stroke-opacity="0.28" stroke-width="0.8"/>
+  <text x="226" y="30.5" font-family="Inter, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#00E676" letter-spacing="1.1">STRETCHING AND FLEXIBILITY</text>
+  <text x="216" y="65" font-family="Inter, Arial, sans-serif" font-size="15.5" font-weight="700" fill="#FAFAFA">Chest Stretch (Open Doorway)</text>
+  <text x="216" y="88" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="500" fill="#9CA3AF">Pectoralis Major · Pectoralis Minor · Anterior Deltoid</text>
+  <rect x="216" y="106" width="104" height="26" rx="7" fill="#181A22" stroke="#272A36" stroke-width="1"/>
+  <text x="226" y="122.5" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="700" fill="#E4E4E7" letter-spacing="0.7">BEGINNER</text>
+  <rect x="328" y="106" width="136" height="26" rx="7" fill="#181A22" stroke="#00E676" stroke-opacity="0.35" stroke-width="1"/>
+  <text x="338" y="122.5" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="700" fill="#00E676" letter-spacing="0.4">2 SETS × 25 sec per s</text>
+  <rect x="216" y="142" width="248" height="3" rx="1.5" fill="#1F222E"/>
+  <rect x="216" y="142" width="70" height="3" rx="1.5" fill="#00E676">
+    <animate attributeName="x" values="216;394;216" dur="2.6s" repeatCount="indefinite"/>
+  </rect>
+</svg>
