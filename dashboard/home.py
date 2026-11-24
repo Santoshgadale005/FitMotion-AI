@@ -6,6 +6,7 @@ import streamlit as st
 
 import config
 from dashboard.components import (
+    ensure_demo_athlete_account,
     get_active_profile,
     navigate_to,
     render_darebee_week_poster,
@@ -90,9 +91,14 @@ def render_main_dashboard() -> None:
         navigate_to("ai_training_assistant")
 
     if not is_auth:
-        st.info(
-            "Exploring in **Guest Preview Mode**. Open **Login & Registration** in the sidebar to create your athlete account or click **Sign In as Demo Athlete** to preview live ML rankings, weekly schedules, and Plotly analytics."
+        demo_c1, demo_c2 = st.columns([2.8, 1.2], vertical_alignment="center")
+        demo_c1.info(
+            "Exploring in **Guest Preview Mode**. Load the pre-populated **Portfolio Demo Athlete** in 1 click to preview live Scikit-learn ML rankings, weekly schedules, and Plotly analytics—or register under **Login & Registration**."
         )
+        if demo_c2.button("⚡ Load Demo Athlete", type="primary", width="stretch", key="home_load_demo"):
+            with st.spinner("Loading demo athlete profile, ML ratings, schedule & analytics..."):
+                st.session_state["auth_user"] = ensure_demo_athlete_account()
+            st.rerun()
 
     # KPI Metric Row
     st.write("")
